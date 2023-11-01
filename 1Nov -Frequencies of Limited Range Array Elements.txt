@@ -1,0 +1,13 @@
+     Map<Integer, Integer> frequencyMap = new HashMap<>();
+
+        for (int i = 0; i < n; i++) {
+            int num = arr[i];
+            if (num <= n) {
+                frequencyMap.put(num, frequencyMap.getOrDefault(num, 0) + 1);
+            }
+        }
+
+        for (int i = 1; i <= n; i++) {
+            arr[i - 1] = frequencyMap.getOrDefault(i, 0);
+        }
+    }
