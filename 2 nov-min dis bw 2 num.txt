@@ -1,0 +1,23 @@
+class Solution {
+    int minDist(int a[], int n, int x, int y) {
+       int minDist = Integer.MAX_VALUE;
+        int prevIndex = -1;
+
+        for (int i = 0; i < n; i++) {
+            if (a[i] == x || a[i] == y) {
+                if (prevIndex != -1 && a[i] != a[prevIndex]) {
+                    minDist = Math.min(minDist, i - prevIndex);
+                }
+                prevIndex = i;
+            }
+        }
+
+        if (minDist == Integer.MAX_VALUE) {
+            return -1;
+        }
+
+        return minDist;
+        
+        
+    }
+}
